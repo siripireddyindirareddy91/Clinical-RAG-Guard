@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.vercel/
+.venv/
+__pycache__/
+.pytest_cache/
+*.db
+.env
+.env.local
+*.pyc
+test-results/
+playwright-report/

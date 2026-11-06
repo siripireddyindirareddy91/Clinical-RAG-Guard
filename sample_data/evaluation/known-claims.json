@@ -1,0 +1,22 @@
+[
+  {
+    "text": "Hypertension always causes a heart attack within one year.",
+    "expected": "flagged"
+  },
+  {
+    "text": "The study proves that diabetes can be cured in 7 days.",
+    "expected": "flagged"
+  },
+  {
+    "text": "Influenza vaccination prevents all infections.",
+    "expected": "flagged"
+  },
+  {
+    "text": "The medication reduced mortality by 90%.",
+    "expected": "flagged"
+  },
+  {
+    "text": "Sleep medication guarantees improved wellbeing.",
+    "expected": "flagged"
+  }
+]

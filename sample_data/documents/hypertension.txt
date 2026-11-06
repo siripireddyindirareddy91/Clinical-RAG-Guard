@@ -1,0 +1,3 @@
+SYNTHETIC TEACHING FIXTURE — NOT CLINICAL EVIDENCE
+
+In this fictional teaching cohort, hypertension was associated with increased cardiovascular risk. Blood pressure monitoring was included in the study protocol. This observational synthetic dataset does not establish causation.
