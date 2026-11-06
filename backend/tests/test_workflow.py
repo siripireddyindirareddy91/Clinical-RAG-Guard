@@ -29,6 +29,10 @@ def test_five_full_scenarios(authenticated,index):
     assert all(x['status']=='Supported' and x['citation_valid'] for x in q['final_claims'])
     assert len(q['traces'])==8
     assert c.get('/api/verification/'+q['id']).status_code==200
+    saved=c.get('/api/clinical/queries/'+q['id']).json()
+    assert saved['claims'][0]['record_id']
+    claim=c.get('/api/verification/claims/'+saved['claims'][0]['record_id'])
+    assert claim.status_code==200 and 'evidence' in claim.json()
     pdf=c.get('/api/reports/'+q['id']+'/download?format=pdf')
     assert pdf.status_code==200 and pdf.content.startswith(b'%PDF')
     assert 'Claim,Status' in c.get('/api/reports/'+q['id']+'/download?format=csv').text

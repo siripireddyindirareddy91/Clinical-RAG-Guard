@@ -144,7 +144,7 @@ def persist(state,user,elapsed):
     result['coverage']=round(sum(c['status']=='Supported' for c in result['claims'])/max(1,len(result['claims'])),3)
     id=uid(); result['id']=id; result['created_at']=datetime.now(timezone.utc).isoformat()
     with Session() as db:
-        q=Query(id=id,user_id=user.id,question=state['question'],generated_answer=state['answer'],corrected_answer=state['corrected_answer'],status='Verified source attribution' if state['valid'] else 'Insufficient evidence',result=result)
+        q=Query(id=id,user_id=user.id,question=state['question'],generated_answer=state['answer'],corrected_answer=state['corrected_answer'],status='Verified source attribution' if state['valid'] else 'Insufficient evidence',result=json.loads(json.dumps(result)))
         db.add(q); db.flush()
         for c in result['claims']:
             claim=Claim(id=uid(),query_id=id,claim_text=c['text'],verification_status=c['status'],confidence_score=c['confidence'],explanation=c['explanation']); db.add(claim); db.flush()
