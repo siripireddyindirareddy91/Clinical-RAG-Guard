@@ -1,5 +1,11 @@
 # MediVerify AI — Clinical RAG Guard
 
+Live research demo: https://mediverify-ai-lemon.vercel.app
+
+Deployed API: https://mediverify-research-api.vercel.app · [Interactive API docs](https://mediverify-research-api.vercel.app/docs)
+
+The current hosted deployment uses a connected **Neon PostgreSQL Free** database and a stable server-side session secret. Records are shared across Vercel instances. The SQLite warning below applies only to deployments without DATABASE_URL.
+
 A functional clinical research evidence workspace with Next.js, React, TypeScript, FastAPI, SQLAlchemy, and eight-node LangGraph orchestration. Upload sources, retrieve passages, generate an evidence-constrained answer, inspect claims, remove unsupported statements, recheck the result, and export a report.
 
 **Research and teaching only. No diagnosis, clinical validation, or patient data.** Bundled studies are fictional and labeled synthetic. Source attribution is not proof of medical truth. Confidence is a system estimate, not a clinical probability.
